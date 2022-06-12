@@ -3,6 +3,9 @@
         "browser": true,
         "es2021": true
     },
+    "globals": {
+        "JSX": true
+    },
     "extends": [
         "plugin:react/recommended",
         "airbnb"
@@ -44,6 +47,11 @@
             }
         ],
         "react/function-component-definition": "off",
-        "arrow-body-style": "off"
+        "arrow-body-style": "off",
+        "throwIfNamespace": "off",
+        "import/prefer-default-export": "off",
+        "max-len": "off",
+        "@typescript-eslint/no-unused-vars": ["error"],
+        "react/jsx-props-no-spreading": "off"
     }
 }
