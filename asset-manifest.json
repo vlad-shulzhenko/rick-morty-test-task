@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/rick-morty-test-task/static/js/main.8fe267fd.js",
+    "static/media/logo.svg": "/rick-morty-test-task/static/media/logo.66e964cd1fc49648dddd847ae4e5383d.svg",
+    "static/media/header-background.jpg": "/rick-morty-test-task/static/media/header-background.455abffb934d105abe66.jpg",
+    "index.html": "/rick-morty-test-task/index.html",
+    "main.8fe267fd.js.map": "/rick-morty-test-task/static/js/main.8fe267fd.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.8fe267fd.js"
+  ]
+}
