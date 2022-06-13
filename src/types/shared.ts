@@ -13,14 +13,17 @@ export interface CharacterItem {
   status: string,
   created: string,
 }
+interface PictureData {
+    url: string,
+    height: number,
+    width: number,
+}
+
+interface Picture {
+  data: PictureData
+}
 
 export interface User {
   name: string,
-  picture: {
-    data: {
-      url: string,
-      height: number,
-      width: number,
-    }
-  }
+  picture: Picture
 }

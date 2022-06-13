@@ -1,11 +1,13 @@
 import React from 'react';
 import { Box } from '@mui/material';
 import { CharacterItem } from 'types/shared';
-import CharacterCard from 'components/CharacterCard/CharacterCard';
-import { useCharacterContext } from 'contexts/CharacterContext';
+import CharacterCard from 'components/CharacterCard';
 
-const CharactersList = () => {
-  const { characters } = useCharacterContext();
+type Props = {
+  characters: CharacterItem[]
+}
+
+const CharactersList = ({ characters }: Props) => {
   return (
     <Box
       sx={{

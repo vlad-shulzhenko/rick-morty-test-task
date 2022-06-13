@@ -1,10 +1,10 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
-import Logo from 'components/Logo/Logo';
+import { Box, Button, Typography } from '@mui/material';
+import Logo from 'components/Logo';
 import { useCharacterContext } from 'contexts/CharacterContext';
 import FacebookLogin from 'react-facebook-login';
 
-const HeaderNav = () => {
+const Header = () => {
   const {
     user,
     setUser,
@@ -19,12 +19,12 @@ const HeaderNav = () => {
 
   return (
     <Box
+      component="header"
       display="flex"
       alignItems="center"
       justifyContent="space-evenly"
       py="30px"
       bgcolor="#324629"
-      sx={{ borderBottomLeftRadius: '15px', borderBottomRightRadius: '15px' }}
     >
       <Logo />
       {authUser ? (
@@ -40,6 +40,23 @@ const HeaderNav = () => {
             alt="Profile"
             style={{ borderRadius: '50%' }}
           />
+          <Button
+            sx={{
+              color: '#fff',
+              borderColor: '#4267b2',
+              backgroundColor: '#4267b2',
+              padding: '5px 10px',
+              fontSize: 'calc(.27548vw + 12.71074px)',
+              fontWeight: '700',
+              '&:hover': {
+                backgroundColor: 'blue',
+              },
+            }}
+            variant="outlined"
+            onClick={() => setAuthUser(false)}
+          >
+            Log out
+          </Button>
         </Box>
       ) : (
         <FacebookLogin
@@ -47,10 +64,16 @@ const HeaderNav = () => {
           autoLoad
           fields="name,email,picture"
           callback={responseFacebook}
+          textButton="Log in with facebook"
+          buttonStyle={{
+            borderRadius: '8px',
+            backgroundColor: '#4267b2',
+            padding: '15px 10px',
+          }}
         />
       )}
     </Box>
   );
 };
 
-export default HeaderNav;
+export default Header;

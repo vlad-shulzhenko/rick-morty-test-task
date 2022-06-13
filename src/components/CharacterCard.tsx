@@ -1,22 +1,26 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Link as NavLink } from 'react-router-dom';
 import { Box, Checkbox, Typography } from '@mui/material';
 import { CharacterItem } from 'types/shared';
-import { useCharacterContext } from 'contexts/CharacterContext';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { useCharacterContext } from 'contexts/CharacterContext';
 
 interface Props {
   character: CharacterItem;
 }
 
 const CharacterCard = ({ character }: Props) => {
-  const { setSelectedCharacter, likedCharacters, setLikedCharacters } = useCharacterContext();
+  const { likedCharacters, setSelectedCharacter, toggleLikedCharacter } = useCharacterContext();
+  const isLiked = useMemo(() => {
+    return Boolean(likedCharacters.find((el) => el.id === character.id));
+  }, [likedCharacters]);
+
   return (
     <Box
       border="1px solid #000"
       borderRadius="15px"
-      width="max-content"
+      width="min-content"
       position="relative"
       pb="10px"
     >
@@ -60,9 +64,10 @@ const CharacterCard = ({ character }: Props) => {
         <Checkbox
           icon={<FavoriteBorderIcon />}
           checkedIcon={<FavoriteIcon />}
+          checked={isLiked}
           color="error"
           onClick={() => {
-            setLikedCharacters([...likedCharacters, character]);
+            toggleLikedCharacter(character);
           }}
         />
       </Box>
