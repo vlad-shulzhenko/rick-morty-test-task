@@ -1,20 +1,18 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
-import Home from 'pages/Home';
-import About from 'pages/About';
-import Liked from 'pages/Liked';
+import Routes from 'router/Routes';
+import { Box } from '@mui/material';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/liked" element={<Liked />} />
-      <Route
-        path="*"
-        element={<Navigate to="/" replace />}
-      />
-    </Routes>
+    <Box display="flex" flexDirection="column" minHeight="100vh">
+      <Header />
+      <Box component="main" flex="1 0 auto">
+        <Routes />
+      </Box>
+      <Footer />
+    </Box>
   );
 }
 

@@ -18,6 +18,7 @@ const SearchInput = () => {
         onChange={(event) => {
           setQuery(event.target.value);
         }}
+        sx={{ boxShadow: '1px 3px 9px rgba(128,128,128)', borderRadius: '8px' }}
       />
     </Box>
   );
