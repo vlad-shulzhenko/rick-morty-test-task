@@ -1,4 +1,4 @@
-# Rick an Morty app
+# Rick and Morty app
 
 Used stack: React, TypeScript, Material UI, React Router DOM, React-facebook-login.
 - [DEMO LINK](https://vlad-shulzhenko.github.io/rick-morty-test-task)
